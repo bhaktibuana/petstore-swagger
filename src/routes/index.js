@@ -1,12 +1,19 @@
 const express = require("express");
+const { addPetData } = require("../controller/addPetData");
+const { updatePetData } = require("../controller/updatePetData");
+const { deletePetData } = require("../controller/deletePetData");
+const { getStoreOrder } = require("../controller/getStoreOrder");
+const { addStoreOrder } = require("../controller/addStoreOrder");
+const { deleteStoreOrder } = require("../controller/deleteStoreOrder");
 const {
   getAllPetData,
   getPetDataById,
   getPetDataByStatus,
 } = require("../controller/getPetData");
-const { addPetData } = require("../controller/addPetData");
-const { updatePetData } = require("../controller/updatePetData");
-const { deletePetData } = require("../controller/deletePetData");
+const {
+  updateOrderComplete,
+  updateOrderDelivered,
+} = require("../controller/updateStoreOrder");
 
 const router = express.Router();
 
@@ -29,5 +36,18 @@ router.put("/pet", updatePetData);
 
 // delete exiting pet data
 router.delete("/pet/:id", deletePetData);
+
+// find purchase order by id
+router.get("/store/order/:id", getStoreOrder);
+
+// place an order for pet
+router.post("/store/order", addStoreOrder);
+
+// update status purchase order
+router.put("/store/order/approve", updateOrderComplete);
+router.put("/store/order/deliver", updateOrderDelivered);
+
+// delete purchase order by id
+router.delete("/store/order/:id", deleteStoreOrder)
 
 module.exports = router;
