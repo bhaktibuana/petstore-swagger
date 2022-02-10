@@ -43,7 +43,7 @@ const createStoreOrderQuery = `
     id INT NOT NULL AUTO_INCREMENT,
     pet_id INT NOT NULL,
     quantity INT NOT NULL,
-    ship_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+    ship_date DATETIME,
     status VARCHAR(20) NOT NULL,
     complete BOOLEAN NOT NULL DEFAULT FALSE,
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
