@@ -1,6 +1,6 @@
 const db = require("../src/config/dbConnection");
 
-const dataPetCategory = [{ name: "dog" }, { name: "cat" }];
+const dataPetCategory = [{ name: "Dog" }, { name: "Cat" }];
 
 dataPetCategory.forEach((value) => {
   const insertQuery = `INSERT INTO pet_category (name) VALUES (?);`;
