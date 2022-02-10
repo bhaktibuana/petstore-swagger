@@ -1,5 +1,6 @@
 const db = require("../config/dbConnection");
 
+// get all pet data
 const getAllPetData = (req, res) => {
   const selectQuery = `SELECT p.id, pc.name AS category, p.name, p.status, p.quantity FROM pet as p JOIN pet_category as pc ON p.category_id = pc.id;`;
 
@@ -12,6 +13,7 @@ const getAllPetData = (req, res) => {
   });
 };
 
+// get pet data by id
 const getPetDataById = (req, res) => {
   const id = parseInt(req.params.id);
 
@@ -26,6 +28,7 @@ const getPetDataById = (req, res) => {
   });
 };
 
+// get pet data by status
 const getPetDataByStatus = (req, res) => {
   const status = req.query.status;
 

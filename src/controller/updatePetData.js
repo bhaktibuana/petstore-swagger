@@ -7,7 +7,7 @@ const updatePetData = (req, res) => {
   const status = req.body.status;
   const quantity = req.body.quantity;
 
-  const updateQuery = `UPDATE pet SET name = ?, category_id = ?, status = ?, quantity = ? WHERE id = ?;`;
+  const updateQuery = `UPDATE pet SET name = ?, category_id = ?, status = ?, quantity = ?, updated_at = CURRENT_TIMESTAMP() WHERE id = ?;`;
 
   db.query(
     updateQuery,
