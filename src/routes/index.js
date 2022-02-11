@@ -5,6 +5,10 @@ const { deletePetData } = require("../controller/deletePetData");
 const { getStoreOrder } = require("../controller/getStoreOrder");
 const { addStoreOrder } = require("../controller/addStoreOrder");
 const { deleteStoreOrder } = require("../controller/deleteStoreOrder");
+const { addUser } = require("../controller/addUser");
+const { getUser } = require("../controller/getUser");
+const { updateUser } = require("../controller/updateUser");
+const { deleteUser } = require("../controller/deleteUser");
 const {
   getAllPetData,
   getPetDataById,
@@ -48,6 +52,18 @@ router.put("/store/order/approve", updateOrderComplete);
 router.put("/store/order/deliver", updateOrderDelivered);
 
 // delete purchase order by id
-router.delete("/store/order/:id", deleteStoreOrder)
+router.delete("/store/order/:id", deleteStoreOrder);
+
+// create user
+router.post("/user", addUser);
+
+// get user by username
+router.get("/user/:username", getUser);
+
+// update user by username
+router.put("/user/:username", updateUser);
+
+// delete user by username
+router.delete("/user/:username", deleteUser);
 
 module.exports = router;

@@ -23,6 +23,7 @@
     "moment": "^2.29.1",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.15",
+    "validator": "^13.7.0",
     "validatorjs": "^3.22.1"
   }
 }
