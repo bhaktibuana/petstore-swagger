@@ -10,8 +10,8 @@ There are two ways how to setup the database configuration. You can choose one o
 
 ###### 1st method
 - First of all you have to do is install MySQL database on your computer (this only if you don't have MySQL database yet).
-- Import **./mysql/petstore_swagger.sql** file into your MySQL Database. It will automatically create new schema named "petstore_swagger" with its tables and datas.
-- Open **dbConnection.js** in the **./src/config/** directory and you will see the following code:
+- Import **./db/petstore_swagger.sql** file into your MySQL Database. It will automatically create new schema named "petstore_swagger" with its tables and datas.
+- Open **dbConnection.js** in the **./config/** directory and you will see the following code:
 ```javascript
 const mysql = require("mysql");
 
@@ -28,10 +28,10 @@ module.exports = db;
 
 ###### 2nd method
 - First of all you have to do is install MySQL database on your computer (this only if you don't have MySQL database yet).
-- Open **dbConnection.js** in the **./src/config/** directory and you will see the code like 1st method above.
+- Open **dbConnection.js** in the **./config/** directory and you will see the code like 1st method above.
 - Change value of **host**, **user** and **password** to your MySQL configuration.
-- In the root project directory open your terminal and run `node ./mysql/create.js`.
-- After that you need to insert the data to the database by running `node ./mysql/insert.js`.
+- In the root project directory open your terminal and run `node ./db/migration/table.migration.js`.
+- After that you need to insert the data to the database by running `node ./db/seeder/data.seeder.js`.
 
 ## Run the app
 - In the root directory you can run `npm start` on your terminal.
