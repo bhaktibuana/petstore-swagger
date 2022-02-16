@@ -1,4 +1,4 @@
-const db = require("../../src/config/dbConnection");
+const db = require("../../config/dbConnection");
 
 const createPetCategoryQuery = `
   CREATE TABLE IF NOT EXISTS pet_category (
